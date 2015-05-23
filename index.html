@@ -1,1 +1,42 @@
-Dit wordt de pagina voor fruitig amersfoort!
+<!DOCTYPE html>
+<html lang='nl'>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Language" content="nl">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+            html, body, #map {
+                height: 100%;
+                width: 100%;
+            }
+        </style>
+    </head>
+
+    <div id="map"></div>
+    <script type="text/javascript">
+        var map = L.map('map').setView([52.1683, 5.378048973], 13);
+        var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: 'Map data &copy; ' + mapLink,
+                maxZoom: 18,
+            }
+        ).addTo(map);
+
+        $.getJSON('./fruitig-amersfoort.geojson', function (data){
+            var fruitdatalayer = L.geoJson(data, {
+                onEachFeature: function (feature, layer) {
+                    layer.bindPopup(feature.properties.NEDERLANDS);
+                }
+            }).addTo(map);
+        });
+    </script>
+</html>
