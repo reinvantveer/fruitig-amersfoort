@@ -12,42 +12,30 @@
         <link rel="stylesheet" href="assets/js/Leaflet.markercluster/dist/MarkerCluster.css" />
         <link rel="stylesheet" href="assets/js/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
         <script src="assets/js/Leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
+        <link rel="stylesheet" href="assets/css/app.css" />
 
-        <style>
-            body {
-                padding: 0;
-                margin: 0;
-            }
-            html, body, #map {
-                height: 100%;
-                width: 100%;
-            }
-        </style>
     </head>
 
-    <div id="map"></div>
-    <script type="text/javascript">
-        "use strict";
-        var map = L.map('map').setView([52.1683, 5.378048973], 13);
-        var mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-        var markers = L.markerClusterGroup();
+    <body>
+        <div id="menu">
+            <select onchange="menuChange(this)">
+                <option>Kies een soort...</option>
+                <option>Appel</option>
+                <option>Hazelaar</option>
+                <option>Kastanje</option>
+                <option>Kerspruim</option>
+                <option>Mispel</option>
+                <option>Moerbei</option>
+                <option>Netelboom</option>
+                <option>Peer</option>
+                <option>Vogelkers</option>
+                <option>Walnoot</option>
+                <option>Zoete kers</option>
 
-        L.tileLayer(
-            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: 'Map data &copy; ' + mapLink,
-                maxZoom: 18,
-            }
-        ).addTo(map);
-
-        $.getJSON('assets/data/fruitig-amersfoort.geojson', function (data){
-            var geoJsonLayer = L.geoJson(data, {
-                onEachFeature: function (feature, layer) {
-                    layer.bindPopup(feature.properties.NEDERLANDS);
-                }
-            })
-            markers.addLayer(geoJsonLayer);
-            map.addLayer(markers);
-        });
-
-    </script>
+            </select>
+        </div>
+        <div id="map">
+        </div>
+        <script src="assets/js/app/app.js"></script>
+    </body>
 </html>
