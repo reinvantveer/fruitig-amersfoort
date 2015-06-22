@@ -11,14 +11,6 @@ L.tileLayer(
     }
 ).addTo(map);
 
-$.getJSON(
-    'assets/data/fruitig-amersfoort.geojson',
-    function (data) {
-        "use strict";
-
-    }
-);
-
 //function to pass ajax data into variable
 //see http://stackoverflow.com/questions/905298/jquery-storing-ajax-response-into-global-variable
 //this is necessary as we unload and reload the layer data according to filtered values
@@ -69,6 +61,6 @@ function menuChange() {
 }
 
 //fancy vertical radio buttons
-$(function() {
+$(document).ready(function() {
     $("#radio").buttonsetv();
 });
