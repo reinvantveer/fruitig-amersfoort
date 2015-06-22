@@ -8,6 +8,10 @@
         <script src="assets/js/leaflet-0.7.3/leaflet.js"></script>
 
         <script src="assets/js/jquery-2.1.3/jquery.min.js"></script>
+        <script src="assets/js/jquery-ui-1.11.4/jquery-ui.js"></script>
+        <link rel="stylesheet" href="assets/js/jquery-ui-1.11.4/jquery-ui.css">
+        <script src="assets/js/app/jqueryui.verticalradio.js"></script>
+
 
         <link rel="stylesheet" href="assets/js/Leaflet.markercluster/dist/MarkerCluster.css" />
         <link rel="stylesheet" href="assets/js/Leaflet.markercluster/dist/MarkerCluster.Default.css" />
@@ -18,24 +22,28 @@
 
     <body>
         <div id="menu">
-            <select onchange="menuChange(this)">
-                <option>Kies een soort...</option>
-                <option>Appel</option>
-                <option>Hazelaar</option>
-                <option>Kastanje</option>
-                <option>Kerspruim</option>
-                <option>Mispel</option>
-                <option>Moerbei</option>
-                <option>Netelboom</option>
-                <option>Peer</option>
-                <option>Vogelkers</option>
-                <option>Walnoot</option>
-                <option>Zoete kers</option>
-
-            </select>
+            <form>
+                <div id="radio" onchange="menuChange(this)">
+                    <input type="radio" id="radio0" name="radio" value="" checked="checked"><label for="radio0">Alle soorten</label>
+                    <input type="radio" id="radio1" name="radio" value="Appel"><label for="radio1">Appel</label>
+                    <input type="radio" id="radio2" name="radio" value="Hazelaar"><label for="radio2">Hazelaar</label>
+                    <input type="radio" id="radio3" name="radio" value="Kastanje"><label for="radio3">Kastanje</label>
+                    <input type="radio" id="radio4" name="radio" value="Mispel"><label for="radio4">Mispel</label>
+                    <input type="radio" id="radio5" name="radio" value="Moerbei"><label for="radio5">Moerbei</label>
+                    <input type="radio" id="radio6" name="radio" value="Netelboom"><label for="radio6">Netelboom</label>
+                    <input type="radio" id="radio7" name="radio" value="Peer"><label for="radio7">Peer</label>
+                    <input type="radio" id="radio8" name="radio" value="Pruim"><label for="radio8">Pruim</label>
+                    <input type="radio" id="radio9" name="radio" value="Vogelkers"><label for="radio9">Vogelkers</label>
+                    <input type="radio" id="radio10" name="radio" value="Walnoot"><label for="radio10">Walnoot</label>
+                    <input type="radio" id="radio11" name="radio" value="Zoete kers"><label for="radio11">Zoete kers</label>
+                </div>
+            </form>
         </div>
         <div id="map">
         </div>
         <script src="assets/js/app/app.js"></script>
+        <script>
+
+        </script>
     </body>
 </html>

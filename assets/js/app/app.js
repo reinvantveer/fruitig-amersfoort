@@ -51,14 +51,14 @@ var geoJsonLayer = L.geoJson(jsondata, {
 markers.addLayer(geoJsonLayer);
 map.addLayer(markers);
 
-function menuChange(select) {
+function menuChange() {
     "use strict";
-    console.log(select.value);
+    var selectedvalue = $('input:radio[name=radio]:checked').val();
     markers.removeLayer(geoJsonLayer);
 
     geoJsonLayer = L.geoJson(jsondata, {
         filter: function (feature, layer) {
-            return feature.properties.NEDERLANDS.toLowerCase().indexOf(select.value.toLowerCase()) !== -1;
+            return feature.properties.NEDERLANDS.toLowerCase().indexOf(selectedvalue.toLowerCase()) !== -1;
         },
         onEachFeature: function (feature, layer) {
             layer.bindPopup(feature.properties.NEDERLANDS);
@@ -67,3 +67,8 @@ function menuChange(select) {
 
     markers.addLayer(geoJsonLayer);
 }
+
+//fancy vertical radio buttons
+$(function() {
+    $("#radio").buttonsetv();
+});

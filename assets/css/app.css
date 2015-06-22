@@ -17,3 +17,27 @@ html, body, {
     right: 10px;
     margin-top: 10px;
 }
+.leaflet-bar a, .leaflet-bar a:hover {
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    text-align-all: center;
+    text-decoration: none;
+    color: #000;
+}
+.menu-item {
+    background-color: #FFF;
+    border-bottom: 1px solid #CCC;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    text-align-all: center;
+    text-decoration: none;
+    color: #000;
+}
