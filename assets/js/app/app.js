@@ -64,3 +64,6 @@ function menuChange() {
 $(document).ready(function() {
     $("#radio").buttonsetv();
 });
+
+//Geolocation to aid in locating known positions
+L.control.locate().addTo(map);
